@@ -11,11 +11,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 236, 241, 185),
+      backgroundColor: Color(0xFFFDFFE8),
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
-            backgroundColor: Colors.green,
+            backgroundColor: Color.fromARGB(255, 0, 79, 45),
             leading: const Icon(Icons.menu),
             title: const Text('F o o d  C a r e',
                 style: TextStyle(
@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  color: Colors.lightGreen,
+                  color: Color.fromARGB(255, 204, 255, 146),
                   height: 150,
                 ),
               ),
@@ -49,7 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  color: Colors.lightGreen,
+                  color: Color.fromARGB(255, 204, 255, 146),
                   height: 150,
                 ),
               ),
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  color: Colors.lightGreen,
+                  color: Color.fromARGB(255, 204, 255, 146),
                   height: 150,
                 ),
               ),
@@ -81,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  color: Colors.lightGreen,
+                  color: Color.fromARGB(255, 204, 255, 146),
                   height: 150,
                 ),
               ),
@@ -97,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  color: Colors.lightGreen,
+                  color: Color.fromARGB(255, 204, 255, 146),
                   height: 150,
                 ),
               ),
@@ -113,7 +113,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(10),
                 child: Container(
-                  color: Colors.lightGreen,
+                  color: Color.fromARGB(255, 204, 255, 146),
                   height: 150,
                 ),
               ),
