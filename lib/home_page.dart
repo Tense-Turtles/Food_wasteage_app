@@ -11,11 +11,11 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFDFFE8),
+      backgroundColor: const Color(0xFFFDFFE8),
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
-            backgroundColor: Color.fromARGB(255, 0, 79, 45),
+            backgroundColor: const Color.fromARGB(255, 0, 79, 45),
             leading: const Icon(Icons.menu),
             title: const Text('F o o d  C a r e',
                 style: TextStyle(
@@ -23,102 +23,23 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.bold,
                     color: Colors.white)),
           ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                left: 20,
-                right: 20,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Color.fromARGB(255, 204, 255, 146),
-                  height: 150,
+          for (int i = 0; i < 6; i++)
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.only(
+                  top: 20.0,
+                  left: 20,
+                  right: 20,
+                ),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Container(
+                    color: const Color.fromARGB(255, 204, 255, 146),
+                    height: 150,
+                  ),
                 ),
               ),
             ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                left: 20,
-                right: 20,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Color.fromARGB(255, 204, 255, 146),
-                  height: 150,
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                left: 20,
-                right: 20,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Color.fromARGB(255, 204, 255, 146),
-                  height: 150,
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                left: 20,
-                right: 20,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Color.fromARGB(255, 204, 255, 146),
-                  height: 150,
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                left: 20,
-                right: 20,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Color.fromARGB(255, 204, 255, 146),
-                  height: 150,
-                ),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.only(
-                top: 20.0,
-                left: 20,
-                right: 20,
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Container(
-                  color: Color.fromARGB(255, 204, 255, 146),
-                  height: 150,
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
