@@ -11,13 +11,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 236, 241, 185),
+      backgroundColor: const Color.fromARGB(255, 236, 241, 185),
       body: CustomScrollView(
         slivers: [
           SliverAppBar.large(
             backgroundColor: Colors.green,
-            leading: Icon(Icons.menu),
-            title: Text('F o o d  C a r e',
+            leading: const Icon(Icons.menu),
+            title: const Text('F o o d  C a r e',
                 style: TextStyle(
                     fontStyle: FontStyle.italic,
                     fontWeight: FontWeight.bold,
