@@ -7,11 +7,13 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  late final TabController _tabController =
+      TabController(length: 2, vsync: this);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(child: Text('Hello')),
+      drawer: const Drawer(child: Text('Hello')),
       // backgroundColor: const Color(0xFFFDFFE8),
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -32,12 +34,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 )
               ]),
+
               SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(children: [
                     for (int i = 0; i < 6; i++)
                       Container(
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         height: 180,
                         width: 350,
                         decoration: BoxDecoration(
@@ -46,61 +49,80 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: const ButtonBar(),
                       ),
                   ])),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Container(
+                  child: Align(
+                    alignment: Alignment.center,
+                    child: TabBar(
+                      controller: _tabController,
+                      isScrollable: true,
+                      indicator: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.green),
+                      tabs: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Tab(
+                            text: 'Find Food',
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Tab(text: 'Collect Waste'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(left: 20),
+                height: 300,
+                width: double.maxFinite,
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    ListView(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.food_bank),
+                          title: Text('Hostel-1'),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.food_bank),
+                          title: Text('Hostel-1'),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.food_bank),
+                          title: Text('Hostel-1'),
+                        ),
+                        // Add more ListTiles as needed
+                      ],
+                    ),
+                    ListView(
+                      children: [
+                        ListTile(
+                          leading: Icon(Icons.food_bank),
+                          title: Text('Hostel-1'),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.food_bank),
+                          title: Text('Hostel-1'),
+                        ),
+                        ListTile(
+                          leading: Icon(Icons.food_bank),
+                          title: Text('Hostel-1'),
+                        ),
+                        // Add more ListTiles as needed
+                      ],
+                    )
+                  ],
+                ),
+              )
+              //const TabBarView(children: [Center(child: Text('hello'))])
             ]),
       ),
-
-      // CustomScrollView(
-      //   slivers: [
-      //     SliverAppBar.large(
-      //       backgroundColor: const Color.fromARGB(255, 0, 79, 45),
-      //       // leading: const Icon(Icons.menu),
-      //       title: const Text('F o o d  C a r e',
-      //           style: TextStyle(
-      //               fontStyle: FontStyle.italic,
-      //               fontWeight: FontWeight.bold,
-      //               color: Colors.white)),
-      //     ),
-      //     for (int i = 0; i < 6; i++)
-      //       SliverToBoxAdapter(
-      //         child: Padding(
-      //           padding: const EdgeInsets.only(
-      //             top: 20.0,
-      //             left: 20,
-      //             right: 20,
-      //           ),
-      //           child: ClipRRect(
-      //             borderRadius: BorderRadius.circular(10),
-      //             child: Container(
-      //               color: const Color.fromARGB(255, 204, 255, 146),
-      //               height: 150,
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //   ],
-      // ),
     );
-    // return Scaffold(
-    //   // appBar: AppBar(
-    //   //   title: Text(
-    //   //     'Food Care',
-    //   //     style: TextStyle(
-    //   //         fontStyle: FontStyle.italic, fontWeight: FontWeight.bold),
-    //   //   ),
-    //   // ),
-    //   body:CustomScrollView(
-    //     slivers: [SliverAppBar.large(leading: IconButton,)],
-    //   ),
-    //   // Center(
-    //   //   child: Column(
-    //   //     mainAxisAlignment: MainAxisAlignment.center,
-    //   //     children: <Widget>[
-    //   //       const Text(
-    //   //         'this is still in procduction',
-    //   //       ),
-    //   //     ],
-    //   //   ),
-    //   // ),
-    // );
   }
 }
